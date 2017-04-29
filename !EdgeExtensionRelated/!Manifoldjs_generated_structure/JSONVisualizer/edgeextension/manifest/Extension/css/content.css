@@ -1,0 +1,89 @@
+.jv-container {
+    font-size: 13px;
+    line-height: 1.2;
+    font-family: monospace;
+    padding-left: 0;
+    margin-left: 20px;
+    overflow: auto;
+}
+.jv-container,
+.jv-container ul{
+    list-style: none !important;
+}
+.jv-container ul{
+    padding: 0px !important;
+    padding-left: 20px !important;
+    margin: 0px !important;
+}
+
+.jv-container li {
+    position: relative;
+}
+
+.jv-container > li  > .key,
+.jv-container .array .key {
+    display: none;
+}
+
+.jv-container .array .object .key {
+    display: inline;
+}
+
+.jv-container li:after {
+    content: ",";
+}
+
+.jv-container li:last-child:after {
+    content: "";
+}
+
+.jv-container .null {
+    color: #999;
+}
+.jv-container .string {
+    color: #4e9a06;
+}
+.jv-container .number {
+    color: #a40000;
+}
+.jv-container .boolean {
+    color: #c4a000;
+}
+.jv-container .key {
+    color: #204a87;
+}
+.jv-container .expanded {
+    cursor: pointer;
+}
+.jv-container .expanded:before {
+    content: "-";
+    font-size: 1.2em;
+    width: 13px;
+    text-align: center;
+    line-height: 13px;
+    font-family: sans-serif;
+    color: #933;
+    position: absolute;
+    left: -15px;
+    top: 3px;
+}
+
+.jv-container .collapsed:before {
+    content: "+";
+    font-size: 1.1em;
+    color: #000;
+    top: 1px;
+}
+
+.jv-container li .collapsed ~ .close:before {
+    content: "... ";
+    color: #999;
+}
+
+.jv-container .hidden ~ ul {
+  display: none;
+}
+
+.jv-container span {
+    position: static !important;
+}

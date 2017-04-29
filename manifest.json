@@ -1,0 +1,32 @@
+{
+    "name": "JSON Visualizer",
+    "version": "1.0.0.0",
+    "description": "This browser extension renders a JSON response in a more reader friendly layout.",
+    "author": "Mridul Sethia",
+	"homepage_url": "https://github.com/mridulsethia/My.Extensions.JsonVisualizer",
+    "default_locale": "en",
+	"content_security_policy" : "script-src 'self'; img-src 'self'; style-src 'self';",
+    "content_scripts": [ {
+      "matches": ["*://*/*"],
+      "css": ["css/content.css"],
+      "js": ["js/jquery.js","js/content.js"],
+      "run_at": "document_end"
+    } ],
+	"permissions": [ "*://*/*" ],
+	"icons": {
+       "16": "icons/json_16.png",
+       "24": "icons/json_24.png",
+       "30": "icons/json_30.png",
+       "42": "icons/json_42.png",
+       "50": "icons/json_50.png",
+       "54": "icons/json_54.png",
+       "70": "icons/json_70.png",
+       "90": "icons/json_90.png",
+       "120": "icons/json_120.png",
+       "150": "icons/json_150.png",
+       "210": "icons/json_210.png",
+       "270": "icons/json_270.png"
+    },
+    "minimum_edge_version": "38.14393.0.0",
+	"web_accessible_resources" : ["icons/json_50.png"]
+}
