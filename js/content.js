@@ -59,7 +59,7 @@
 		}
 		var jKey = ((isArray) ? '' : (encode(key) + ':'))
 		if(type == 'object') {
-			var object = '<li><span class="'+ renderModes +'"></span><span class="key">' + jKey + '</span>');
+			var object = '<li><span class="'+ renderModes +'"></span><span class="key">' + jKey + '</span>';
 			object += (' <span class="open">' + open + '</span> <ul class="' + cssClass + '">');
 			object += renderAsHtml(value, renderModes, $.isArray(value));
 			return object += ('</ul><span class="close">' + close + '</span></li>');
