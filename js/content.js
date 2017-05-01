@@ -57,17 +57,17 @@
 		if(value === null) {
 			return '<li><span class="key">' + encode(key) + ': </span><span class="null">' + encode(value) + '</span></li>';
 		}
+		var jKey = ((isArray) ? '' : (encode(key) + ':'))
 		if(type == 'object') {
-			var object = '<li><span class="'+ renderModes +'"></span>';
-			object += ('<span class="key">' + ((isArray) ? '' : (encode(key) + ':')) + ' </span>');
+			var object = '<li><span class="'+ renderModes +'"></span><span class="key">' + jKey + '</span>');
 			object += (' <span class="open">' + open + '</span> <ul class="' + cssClass + '">');
 			object += renderAsHtml(value, renderModes, $.isArray(value));
 			return object += ('</ul><span class="close">' + close + '</span></li>');
 		}
 		if(type == 'number' || type == 'boolean') {
-			return '<li><span class="key">' + encode(key) + ': </span><span class="'+ type + '">' + encode(value) + '</span></li>';
+			return '<li><span class="key">' + jKey + '</span> <span class="'+ type + '">' + encode(value) + '</span></li>';
 		}
-		return '<li><span class="key">' + encode(key) + ': </span><span class="'+ type + '">"' + encode(value) + '"</span></li>';
+		return '<li><span class="key">' + jKey + '</span> <span class="'+ type + '">"' + encode(value) + '"</span></li>';
 	}
 
 	function getRenderingModes(expanded) {
